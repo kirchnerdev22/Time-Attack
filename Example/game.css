@@ -1,0 +1,48 @@
+* {
+    font-family: monospace;
+}
+
+body {
+    color:black;
+    background: linear-gradient(bisque 10%, black 90%);
+}
+
+#question {
+    font-size: 3rem;
+    color: black;
+}
+
+.choice-contianer {
+    box-shadow: 0 0.4rem 1.4rem beige ;
+    transition: transform 150ms;
+    transform: scale(1.03);
+    font-size: 1.4rem;
+}
+
+.choice-text:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 black;
+    transform: scale(1rem);
+    transform: transform 100ms;
+    background-color: black;
+    color: bisque;
+    border-radius: 50px;
+}
+
+.choice-text {
+    padding: 2rem;
+}
+
+
+.correct {
+    background: linear-gradient(45deg, beige)
+}
+
+.incorrect {
+    background: linear-gradient(45 deg, red)
+}
+
+@media screen and (max-width; 768px) {
+    .choice-contianer {
+        min-width: 100%;
+    }
+}
