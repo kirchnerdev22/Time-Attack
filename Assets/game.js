@@ -141,5 +141,5 @@ var decrementTime = num => {
 }
 
 
-startGame()
 
+startGame()

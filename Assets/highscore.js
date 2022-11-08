@@ -1,7 +1,23 @@
-const highScoresList = document.querySelector('#highScoresList')
-const highScores = JSON.parse(localStorage.getItem('highScores')) || []
+const highScores = localStorage.getItem('allScores')
+const Usernames = localStorage.getItem('allName')
+const leaderBoard = document.querySelector('#highScoresList')
 
-highScoresList.innerHTML =
-highScores.map(score => {
-    return `<li class="highscore">${score.name} - ${score.score}</li>`
-}).join('')
+console.log(highScores)
+console.log(Usernames)
+
+let highScoresList = []
+
+highScoresList.push(Usernames, highScores)
+
+console.log(highScoresList)
+
+function newItem(){
+    var newScore = document.createElement('li')
+    leaderBoard.appendChild(newScore)
+    leaderBoard.lastChild.textContent = highScoresList 
+    console.log(newScore)       
+}
+
+newItem()
+
+console.log(newItem)
