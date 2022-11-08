@@ -5,6 +5,7 @@ const leaderBoard = document.querySelector('#highScoresList')
 console.log(highScores)
 console.log(Usernames)
 
+
 let highScoresList = []
 
 highScoresList.push(Usernames, highScores)

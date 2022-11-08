@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>You finished!</title>
     <link rel="stylesheet" href="end.css">
 </head>
 <body>
     <div class="container">
         <h1 id="finalScore">0</h1>
-       <div id="end" class="flex-center flex-column"></div>
-       <form class="end-form-container">
-            <h2 id="end-text">Enter your name below to save score!</h2>
+       <div id="end"></div>
+       
+        <h2 id="end-text">Enter your name below to save score!</h2>
+
+        <input type="text" name="name" id="username">
+
+        <button class="btn" id="saveScoreBtn" type="submit" onclick="location.href='//127.0.0.1:5500/Assets/highscore.html'"
+        >save</button>
             
-            <input type="text" name="name" id="username" >
-            
-            <button href="highscore.html" class="btn" id="saveScoreBtn" type="submit"
-            >save</button>
-       </form>
-       <a href="/Assets/game.html" class="btn">Play again</a>
-       <a href="/index.html" class="btn">Go home</a>
+       <ul>
+        <li><a href="/Assets/game.html" class="btn">Play again</a></li>
+        <li><a href="/index.html" class="btn">Go home</a></li>
+        <li><a href="/Assets/highscore.html">Highscores</a></li>
+       </ul>
+       
     </div>
     <script src="end.js"></script>
 </body>

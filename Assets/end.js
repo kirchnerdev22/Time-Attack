@@ -10,7 +10,7 @@ let allScores = []
 
 finalScore.innerText = mostRecentScore
 allScores.push(mostRecentScore)
-console.log(allScores)
+
     saveScoreBtn.addEventListener('click', (e) => {
         e.preventDefault()
         let recentName = username.value
@@ -23,27 +23,7 @@ console.log(allScores)
 
  localStorage.setItem('allScores', allScores)
 
- console.log(localStorage.getItem('allName'))
-
- console.log(localStorage.getItem('allScores'))
-
-
-
-// allName.push(recentName)
-// saveHighScore = e => {
-//    e.preventDefault()
-//    highScores = {
-//        score: mostRecentScore,
-//        name: username.value
-//    }
-//    localStorage.setItem(score)
-//    highScores.push(score)
-//    highScores.sort((a,b) => {
-//        return b.score - a.score
-//   })
-//   highScores.splice(4)
-//  localStorage.setItem('highScores', JSON.stringify(highScores))
-//    window.location.assign('highscore.html')
+indow.location.assign('highscore.html')
 //}
 
 
