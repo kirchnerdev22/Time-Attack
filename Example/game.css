@@ -7,6 +7,10 @@ body {
     background: linear-gradient(bisque 10%, black 90%);
 }
 
+#timer {
+    font-size: 2rem;
+}
+
 #question {
     font-size: 3rem;
     color: black;
