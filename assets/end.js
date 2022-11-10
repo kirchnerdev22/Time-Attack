@@ -13,6 +13,6 @@ finalScore.innerText = mostRecentScore;
         let playerScore = {playerName, mostRecentScore};
         allScores.push(playerScore); 
         localStorage.setItem('allScores', JSON.stringify(allScores));
-        window.location.assign("./highscore.html");
+        window.location.assign("highscore.html");
  });
 
