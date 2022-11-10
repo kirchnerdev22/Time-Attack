@@ -1,30 +1,18 @@
-var username = document.getElementById('username')
-const saveScoreBtn = document.querySelector ('#saveScoreBtn')
-const finalScore = document.querySelector ('#finalScore')
-const mostRecentScore = localStorage.getItem ('mostRecentScore')
-const MAX_HIGH_SCORES = 4
+var username = document.getElementById('username');
+const saveScoreBtn = document.querySelector ('#saveScoreBtn');
+const finalScore = document.querySelector ('#finalScore');
+const mostRecentScore = localStorage.getItem ('mostRecentScore');
+const allScores = JSON.parse(localStorage.getItem('allScores')) || [];
+const MAX_HIGH_SCORES = 4;
 
-// let allName = []
-let allScores = []
-// let recentName = username.value
-
-finalScore.innerText = mostRecentScore
-allScores.push(mostRecentScore)
+finalScore.innerText = mostRecentScore;
 
     saveScoreBtn.addEventListener('click', (e) => {
-        e.preventDefault()
-        let recentName = username.value
-        let allName = []
-        allName.push(recentName)
-        console.log(allName)
-        localStorage.setItem('allName', allName)
-
- })
-
- localStorage.setItem('allScores', allScores)
-
-indow.location.assign('highscore.html')
-//}
-
-
+        e.preventDefault();
+        let playerName = username.value;
+        let playerScore = {playerName, mostRecentScore};
+        allScores.push(playerScore); 
+        localStorage.setItem('allScores', JSON.stringify(allScores));
+        window.location.assign("./highscore.html");
+ });
 

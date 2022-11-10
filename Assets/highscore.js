@@ -1,24 +1,19 @@
-const highScores = localStorage.getItem('allScores')
-const Usernames = localStorage.getItem('allName')
-const leaderBoard = document.querySelector('#highScoresList')
+const highScores = JSON.parse(localStorage.getItem('allScores')) || [];
+const leaderBoard = document.querySelector('#highScoresList');
 
-console.log(highScores)
-console.log(Usernames)
-
-
-let highScoresList = []
-
-highScoresList.push(Usernames, highScores)
-
-console.log(highScoresList)
-
-function newItem(){
-    var newScore = document.createElement('li')
-    leaderBoard.appendChild(newScore)
-    leaderBoard.lastChild.textContent = highScoresList 
-    console.log(newScore)       
+function appendToPage(){
+    if (highScores.length) {
+        highScores.sort((a,b) => Number(b.mostRecentScore) - Number(a.mostRecentScore));
+        for (let i = 0; i < 4; i++) {
+            if (highScores[i]){
+                var newScore = document.createElement('li');
+                leaderBoard.appendChild(newScore);
+                newScore.textContent = `Name: ${highScores[i].playerName} | Score: ${highScores[i].mostRecentScore}`;       
+            }
+        }
+    } else {
+        leaderBoard.textContent = "No Scores";
+    }
 }
 
-newItem()
-
-console.log(newItem)
+appendToPage()
